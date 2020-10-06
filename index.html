@@ -11,7 +11,7 @@
 
 </head>
 <body>
-	<section id ="loginPge">
+<!-- 	<section id ="loginPge">
 	<h1 id = "header"> Yummy Restaurant </h1>
 
 	<form>
@@ -23,9 +23,9 @@
 	  <input id="PW" type="password" placeholder="Enter Password" name="psw" required>
 	  <br><br>
 
-	  <button id="loginBut">Login</button>
+	  <button id="loginBut" type="button">Login</button>
 	</form>
-	</section>
+	</section> -->
 
 
 	<section id ="panelPage">
@@ -35,44 +35,73 @@
 		<div class="column">
 		 <!-- <div class ="list"> -->
 			<div class="row">
-			  <div class="column" style="background-color:#aaa; width: 100%">
-			    <h2>Column 1</h2>
-			    <p>Some text..</p>
+			  <div id="tab1" class="column" style="background-color:#4A4241; width: 350px ;height: 80px;">
+			    <h3 style="color:#96BD2D; text-align: center;">Restaurant Details</h3>
+			  
 			  </div>
 			</div>
 			<div class="row">
-			  <div class="column" style="background-color:#bbb; width: 100%">
-			    <h2>Column 2</h2>
-			    <p>Some text..</p>
+			  <div id="tab2" class="column" style="background-color:#4A4241; width: 350px ;height: 80px;">
+			    <h3 style="color:#96BD2D ; text-align: center;">Our Menu</h3>
+			    
 			  </div>
 			</div>
 
 			<div class="row">
-			  <div class="column" style="background-color:#ccc; width: 100%">
-			    <h2>Column 3</h2>
-			    <p>Some text..</p>
+			  <div id="tab3"class="column" style="background-color:#4A4241; width: 350px ;height: 80px;">
+			    <h3 style="color:#96BD2D;text-align: center;">View Menu</h3>
+			   
 			  </div>
 			</div>
-			  <div class="row">
-			  <div class="column" style="background-color:#ddd; width: 100%">
-			    <h2>Column 4</h2>
-			    <p>Some text..</p>
-			  </div>
-			</div>
+		
 		<!-- </div> -->
 		</div>
 
 		<!-- <div class ="list"> -->
-		  <div id ="body"class="column" style="background-color:#bbb;width: 75%">
-		    <h2>Column 2</h2>
-		    <p>Some text..</p>
-		  </div>
+		  <div id ="body"class="column" style="width: 75%; height: 405px;"> </div>
 		</div>
+	
+	<div id="menuTable">
+
+<!-- 	********************* Menu Table************ -->
+	<table style="width:100%">
+  <caption style="color:#96BD2D;text-align: center;">Panel Controller</caption>
+  <tr>
+    <th style="color:#96BD2D;text-align: center;">Item Name</th>
+    <th style="color:#96BD2D;text-align: center;">Actions</th>
+  </tr>
+  <button id="addingBut" type="button">Add</button>
+<!--   <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$50</td>
+  </tr> -->
+</table>
+
+
+	<form id= "addingPopUp">
+		<label ><b>Item Name</b></label>
+	  <input id="itemNameInp" class="addingInp" type="text" placeholder="Enter item name" required>
+		<br>
+	  <label ><b>price</b></label>
+	  <input id="priceInp" class="addingInp" type="number" placeholder="Enter item price" required>
+	  <br>
+	  <button id="submit"  type="submit">submit</button>
+	</form>
+
 
 	</section>
+
+
 
 
 	<script src="main.js"></script>
 
 </body>
 </html>
+
+
+

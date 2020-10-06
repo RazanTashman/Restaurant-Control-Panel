@@ -65,3 +65,59 @@ button {
 button:hover {
   background-color: #6E8C1C ;
 }
+
+
+/*********************************control Panel Page********************************/
+
+.column {
+
+  float: left;
+  width: 25%;
+  /*padding: 10px;*/
+  margin-top: 5px;
+
+}
+
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+/*  padding: 10px;*/
+}
+
+table, th, td {
+  border: 1px solid #96BD2D;
+  border-radius: 4px;
+}
+th, td {
+  padding-top: 25px;
+  padding-right: 200px;
+  text-align: left;
+}
+
+#menuTable{
+background-color:  #4A4241;
+position: absolute;
+left:600px;
+top:175px;
+}
+
+#addingBut{
+	width: 25%;
+/*position: absolute;
+left:300px;
+top:-50px;*/
+margin-left:405px;
+margin-top:-50px;
+}
+
+#addingPopUp{
+margin-left:10px;
+margin-top:-50px;
+padding-right: 200px;
+position: absolute;
+left:1px;
+top:15px;
+}
