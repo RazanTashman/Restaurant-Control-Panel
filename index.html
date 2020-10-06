@@ -1,9 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 	<title> Restaurant Control Panel</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
 </head>
 <body>
+	<section id ="loginPge">
+	<h1 id = "header"> Yummy Restaurant </h1>
+
+	<form>
+		<label ><b>Username</b></label>
+	  <input id="uName" type="text" placeholder="Enter Username" name="uname" required>
+		<br><br>
+
+	  <label ><b>Password</b></label>
+	  <input id="PW" type="password" placeholder="Enter Password" name="psw" required>
+	  <br><br>
+
+	  <button id="loginBut">Login</button>
+	</form>
+	</section>
+
+
+	<section id ="panelPage">
+	
+		<div id= "grid">
+
+		<div class="column">
+		 <!-- <div class ="list"> -->
+			<div class="row">
+			  <div class="column" style="background-color:#aaa; width: 100%">
+			    <h2>Column 1</h2>
+			    <p>Some text..</p>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="column" style="background-color:#bbb; width: 100%">
+			    <h2>Column 2</h2>
+			    <p>Some text..</p>
+			  </div>
+			</div>
+
+			<div class="row">
+			  <div class="column" style="background-color:#ccc; width: 100%">
+			    <h2>Column 3</h2>
+			    <p>Some text..</p>
+			  </div>
+			</div>
+			  <div class="row">
+			  <div class="column" style="background-color:#ddd; width: 100%">
+			    <h2>Column 4</h2>
+			    <p>Some text..</p>
+			  </div>
+			</div>
+		<!-- </div> -->
+		</div>
+
+		<!-- <div class ="list"> -->
+		  <div id ="body"class="column" style="background-color:#bbb;width: 75%">
+		    <h2>Column 2</h2>
+		    <p>Some text..</p>
+		  </div>
+		</div>
+
+	</section>
+
+
+	<script src="main.js"></script>
 
 </body>
 </html>
