@@ -1,13 +1,18 @@
 $( document ).ready(function() {
 
-var orderPriceArray=[]
+// var orderPriceArray=[]
 var insertedItems=[]
-var totalOrderArray=[]
+// var totalOrderArray=[]
 var itemDetails={}
 var counter =0
 var orderCounter=0
 var qty
 var value
+var priceValue
+var subTotal
+var totalEarning
+
+
 
 // // console.log(counter)
 // //*******************************logain page**********88888888**********
@@ -48,21 +53,28 @@ $("#tab2").click(function(){
 
 $("#addingBut").click(function(){
 			$("#addingPopUp").show()
+			$("#myTable").hide()
+			$("#addingBut").hide()
+			
+
 	})
 
 $("#submit").click(function(){
 	counter++
+	$("#myTable").show()
 	$("#addingPopUp").hide()
+	$("#addingBut").show()
+
 	var name =$("#itemNameInp").val()
 	var price =$("#priceInp").val()
 	var time =$("#time").val()
 	var size =$("#size").val()
 	itemDetails=makeItem(name,price,time,size)
 	insertedItems.push(itemDetails)
-	orderPriceArray.push(value)
+	// orderPriceArray.push(price)
 	var itemList = $("<a>"+itemDetails['name']+"</a>").appendTo("#Dropdown").on("click", function toggle(){
      value= $(this).text()
-    
+        
     // // var joindArray=orderArray.join()
       console.log("value:" , value)
       $("#Dropdown").hide()
@@ -206,11 +218,15 @@ function insertOrderRowFunc(initial){
   // cell2.setAttribute("id", "removeItem")
   cell1.innerHTML = initial;
   cell2.innerHTML = value
-  // var totalOrderPrice= (itemDetails['price'])*qty
-  // totalOrderArray.push()
-  var x= this.price
-  console.log("price:",x)
-  cell3.innerHTML = x*qty
+  $.each(insertedItems, function(i,item){
+  	if(item["name"]===value){
+  		 priceValue=item["price"]
+  	}
+  })
+  subTotal=priceValue*qty
+  console.log("price:",priceValue)
+  cell3.innerHTML = subTotal
+  totalEarning += subTotal
   cell4.innerHTML = new Date().toLocaleDateString()
   
 }
