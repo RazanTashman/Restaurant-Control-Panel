@@ -11,29 +11,13 @@
 
 </head>
 <body>
-	<section id ="loginPge">
-	<h1 id = "header"> Yummy Restaurant </h1>
-
-	<form>
-		<label ><b>Username</b></label>
-	  <input id="uName" type="text" placeholder="Enter Username" name="uname" required>
-		<br><br>
-
-	  <label ><b>Password</b></label>
-	  <input id="PW" type="password" placeholder="Enter Password" name="psw" required>
-	  <br><br>
-
-	  <button id="loginBut" type="button">Login</button>
-	</form>
-	</section>
 
 
-	<section id ="panelPage">
-	
+
 		<div id= "grid">
 
 		<div class="column">
-		 <!-- <div class ="list"> -->
+		 
 			<div class="row">
 			  <div id="tab1" class="column" style="background-color:#4A4241; width: 350px ;height: 80px;">
 			    <h3 style="color:#4CAF50; text-align: center;">Restaurant Details</h3>
@@ -61,48 +45,119 @@
 			  </div>
 			</div>
 		
-		<!-- </div> -->
+	
 		</div>
 
-		<!-- <div class ="list"> -->
+		
 		  <div id ="body"class="column" style="width: 75%; height: 405px;"> </div>
 		</div>
-	
+
+
+
+	<!-- <section id ="loginPge">
+	<h1 id = "header"> Yummy Restaurant </h1>
+
+	<form>
+		<label ><b>Username</b></label>
+	  <input id="uName" type="text" placeholder="Enter Username" name="uname" required>
+		<br><br>
+
+	  <label ><b>Password</b></label>
+	  <input id="PW" type="password" placeholder="Enter Password" name="psw" required>
+	  <br><br>
+
+	  <button id="loginBut" type="button">Login</button>
+	</form>
+	</section>
+ -->
+<!-- 	********************* control panel ************ -->
+<section id ="panelPage">
 	<div id="menuTable">
 
-<!-- 	********************* Menu Table************ -->
-	<table style="width:100%" id="myTable">
-  <caption style="color:#4CAF50;text-align: center;">Panel Controller</caption>
-  <tr>
-    <th style="color:#4CAF50;text-align: center;">Item Name</th>
-    <th style="color:#4CAF50;text-align: center;">Actions</th>
-  </tr>
-  <button id="addingBut" type="button">Add</button>
-  <!-- <tr></tr> -->
-<!--   <tr>
-    <td>January</td>
-    <td>$100</td>
-  </tr>
-  <tr>
-    <td>February</td>
-    <td>$50</td>
-  </tr> -->
-</table >
+		<table style="width:100%" id="myTable">
+		  <caption style="color:#4CAF50;text-align: center;">Panel Controller</caption>
+		  <tr>
+		    <th style="color:#4CAF50;text-align: center;">Item Name</th>
+		    <th style="color:#4CAF50;text-align: center;">Actions</th>
+		  </tr>
+		  <button id="addingBut" type="button">Add</button>
+		</table >
 
 
-	<form id= "addingPopUp">
-		<label ><b>Item Name</b></label>
-	  <input id="itemNameInp" class="addingInp" type="text" placeholder="Enter item name" required>
+		<form id= "addingPopUp" calss="form" >
+			<label ><b>Item Name</b></label>
+		  <input id="itemNameInp" class="addingInp" type="text" placeholder="Enter item name" required>
+			<br>
+		  <label ><b>price</b></label>
+		  <input id="priceInp" class="addingInp" type="number" placeholder="Enter item price" required>
+		  <br>
+		  <label ><b>Preparation time </b></label>
+		 	<input id="time" class="addingInp" type="number" placeholder="In Minutes" required>
+		 		<br>
+
+		  <label ><b>size</b></label>
+		  <select id="size" class="addingInp" >
+		  	<optgroup label="Meals">
+		  		<option>Small</option>
+			  	<option>Medium</option>
+			  	<option>Large</option>
+		  	</optgroup>
+		  		<optgroup label="Beverages">
+		  		<option>1 Liter</option>
+			  	<option>2 Liter</option>
+			  	<option>3 Liter</option>
+		  	</optgroup>
+		  		<optgroup label="Other">
+		  			<option>Not Applicable</option>
+		  		</optgroup>	
+		  		<br>
+
+		  	 
+		  		
+		  </select>
+		  <br>
+		  <button id="submit"  type="button" >submit</button>
+
+		</form>
+	</div>
+
+	</section>
+
+
+<!-- *************************************My Earning Page**************************** -->
+	<section id ="myEarningsPage">
+
+	<table style="width:100%" id="ordersTable">
+	  <caption style="color:#4CAF50;text-align: center;">Total Orders</caption>
+	  <tr>
+	    <th style="color:#4CAF50;text-align: center;">Order#</th>
+	    <th style="color:#4CAF50;text-align: center;">Order</th>
+	    <th style="color:#4CAF50;text-align: center;">Price</th>
+	    <th style="color:#4CAF50;text-align: center;">Date</th>
+	  </tr>
+	  
+	  <button id="addOrderBut" type="button">Add</button>
+
+	</table >
+
+
+	<form  id= "addingOrders" calss="form">
+
+		<div class="dropdown">
+	  	<button onclick="searchDropdown()" class="dropbtn">Search</button>
+	  	<div id="Dropdown" class="dropdown-content">
+	    	<input type="text" placeholder="Search for item" id="searchBox" onkeyup="filterFunction()">
+	 	 	</div>
+		</div>
+		
+		<div id = "editable" contenteditable="true"></div> 
+
+		<label ><b>Qty.</b></label>
+	  <input id="QtyInp" class="addingInp" type="number" placeholder="Enter the Qty" required>
 		<br>
-	  <label ><b>price</b></label>
-	  <input id="priceInp" class="addingInp" type="number" placeholder="Enter item price" required>
-	  <br>
-	  <label ><b>Preparation time </b></label>
-	 	<input id="time" class="addingInp" type="number" placeholder="In Minutes" required>
-	 		<br>
 
 	  <label ><b>size</b></label>
-	  <select id="size" class="addingInp" >
+	  <select id="orderSize" class="addingInp" >
 	  	<optgroup label="Meals">
 	  		<option>Small</option>
 		  	<option>Medium</option>
@@ -117,33 +172,41 @@
 	  			<option>Not Applicable</option>
 	  		</optgroup>	
 	  		<br>
-
-	  	 
-	  		
 	  </select>
+<!-- 	  <br>
+	  <button id="addOrdItem" type="button">Add</button> -->
 	  <br>
-	  <button id="submit"  type="button" >submit</button>
+	  <button id="OrderSubmit"  type="button" >Submit</button>
 
 	</form>
-</div>
 
-	</section>
-
-	<section id ="myEarningsPage">
-
-		<div class="dropdown">
-  	<button onclick="searchDropdown()" class="dropbtn">Search</button>
-  	<div id="Dropdown" class="dropdown-content">
-    	<input type="text" placeholder="Search for item" id="searchBox" onkeyup="filterFunction()">
-	   <!--  <a href="#about">About</a> -->
-	
-  </div>
-</div>
 
 
 	</section>
 
+<script>
+function searchDropdown() {
+  document.getElementById("Dropdown").classList.toggle("show");
+}
 
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("searchBox");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("Dropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+</script>
 
 
 	<script src="main.js"></script>

@@ -1,15 +1,22 @@
 $( document ).ready(function() {
 
+var orderPriceArray=[]
 var insertedItems=[]
+var totalOrderArray=[]
 var itemDetails={}
 var counter =0
+var orderCounter=0
+var qty
+var value
 
+// // console.log(counter)
+// //*******************************logain page**********88888888**********
+	// $("#myEarningsPage").hide()
+	// $("#panelPage").hide()
+	// $("#loginPge").show()
+	// $("#grid").hide()
 
-// console.log(counter)
-//*******************************logain page**********88888888**********
 	$("#myEarningsPage").hide()
-	$("#panelPage").hide()
-	$("#loginPge").show()
 	
 	$("#loginBut").click(function(){
 		var password= $("#PW").val()
@@ -20,6 +27,7 @@ var counter =0
 			$("#panelPage").show()
 			$("#menuTable").hide()
 			$("#addingPopUp").hide()
+			$("#grid").show()
 		}
 		else {
 			alert("please enter valid password and username")
@@ -28,11 +36,14 @@ var counter =0
 		}
 		
 })
-//**********************************************************************************
+// //**********************************************************************************
 
 //######################### My Menu Page###########################################
 $("#tab2").click(function(){
 	$("#menuTable").show()
+	$("#Dropdown").hide()
+	$("#myEarningsPage").hide()
+
 	})
 
 $("#addingBut").click(function(){
@@ -48,11 +59,27 @@ $("#submit").click(function(){
 	var size =$("#size").val()
 	itemDetails=makeItem(name,price,time,size)
 	insertedItems.push(itemDetails)
+	orderPriceArray.push(value)
+	var itemList = $("<a>"+itemDetails['name']+"</a>").appendTo("#Dropdown").on("click", function toggle(){
+     value= $(this).text()
+    
+    // // var joindArray=orderArray.join()
+      console.log("value:" , value)
+      $("#Dropdown").hide()
+       // $("#searchBox").val("")
+      var typingItems= $("<span>"+value+"</span>") 
+      $("#editable").append(typingItems)
+    }) 
+	
+	
 	insertRowFunc(counter)
 	
 	
 })
 
+// function toggle(){
+//         this.toggleClass("crossed")
+//       }
 
 			
 
@@ -169,6 +196,25 @@ function insertRowFunc(initial){
   
 }
 
+function insertOrderRowFunc(initial){
+	var table = document.getElementById("ordersTable");
+  var row = table.insertRow(initial)
+  var cell1 = row.insertCell(0)
+  var cell2 = row.insertCell(1)
+  var cell3 = row.insertCell(2)
+  var cell4 = row.insertCell(3)
+  // cell2.setAttribute("id", "removeItem")
+  cell1.innerHTML = initial;
+  cell2.innerHTML = value
+  // var totalOrderPrice= (itemDetails['price'])*qty
+  // totalOrderArray.push()
+  var x= this.price
+  console.log("price:",x)
+  cell3.innerHTML = x*qty
+  cell4.innerHTML = new Date().toLocaleDateString()
+  
+}
+
 // ===================================================================================================
 	
 	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -182,32 +228,61 @@ function insertRowFunc(initial){
 $("#tab4").click(function(){
 			$("#menuTable").hide()
 			$("#myEarningsPage").show()
+			$("#addingOrders").hide()
 		
 	})
 
-function searchDropdown() {
-  document.getElementById("Dropdown").classList.toggle("show");
-}
+$(".dropbtn").click(function(){
+	$("#Dropdown").show()
+})
 
-function filterFunction() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("searchBox");
-  filter = input.value.toUpperCase();
-  div = document.getElementById("Dropdown");
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    txtValue = a[i].textContent || a[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
-    } else {
-      a[i].style.display = "none";
-    }
-  }
-}
+$("#OrderSubmit").click(function(){
+	orderCounter++
+	$("#addingOrders").hide()
+
+	 qty =$("#QtyInp").val()
+	var orderSize =$("#orderSize").val()
+	
+	// itemDetails=makeItem(name,price,time,size)
+	// insertedItems.push(itemDetails)
+	
+	// var itemList = $("<a>"+itemDetails['name']+"</a>").appendTo("#Dropdown").on("click", function toggle(){
+ //    var value= $(this).text()
+ //    orderArray.push(value)
+ //    // var joindArray=orderArray.join()
+ //      console.log("value:" , value)
+ //      $("#Dropdown").hide()
+ //       // $("#searchBox").val("")
+ //      var typingItems= $("<span>"+value+"</span>") 
+ //      $("#editable").append(typingItems)
+ //    }) 
+	
+	
+	insertOrderRowFunc(orderCounter)
+})
+$("#addOrderBut").click(function(){
+$("#addingOrders").show()
+})
+
+
+
+// $("#addOrdItem").click(function(){
+//   // skillsArray.push($("#skills").val());
+//   // $("#searchBox").empty();
+//   $("#editable").empty();
+//   $("#size").empty();
+//   $("#itemNameInp").empty();
+//   console.log("done")
+  
+// })
+
+
 
 //*****************************************************************************************************************
 
 })
+
+
 
 
 
