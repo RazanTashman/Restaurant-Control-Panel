@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<!-- 	<section id ="loginPge">
+	<section id ="loginPge">
 	<h1 id = "header"> Yummy Restaurant </h1>
 
 	<form>
@@ -25,7 +25,7 @@
 
 	  <button id="loginBut" type="button">Login</button>
 	</form>
-	</section> -->
+	</section>
 
 
 	<section id ="panelPage">
@@ -36,20 +36,27 @@
 		 <!-- <div class ="list"> -->
 			<div class="row">
 			  <div id="tab1" class="column" style="background-color:#4A4241; width: 350px ;height: 80px;">
-			    <h3 style="color:#96BD2D; text-align: center;">Restaurant Details</h3>
+			    <h3 style="color:#4CAF50; text-align: center;">Restaurant Details</h3>
 			  
 			  </div>
 			</div>
 			<div class="row">
 			  <div id="tab2" class="column" style="background-color:#4A4241; width: 350px ;height: 80px;">
-			    <h3 style="color:#96BD2D ; text-align: center;">Our Menu</h3>
+			    <h3 style="color:#4CAF50 ; text-align: center;">Our Menu</h3>
 			    
 			  </div>
 			</div>
 
 			<div class="row">
 			  <div id="tab3"class="column" style="background-color:#4A4241; width: 350px ;height: 80px;">
-			    <h3 style="color:#96BD2D;text-align: center;">View Menu</h3>
+			    <h3 style="color:#4CAF50;text-align: center;">View Menu</h3>
+			   
+			  </div>
+			</div>
+
+			<div class="row">
+			  <div id="tab4"class="column" style="background-color:#4A4241; width: 350px ;height: 80px;">
+			    <h3 style="color:#4CAF50;text-align: center;">My Earnings</h3>
 			   
 			  </div>
 			</div>
@@ -64,13 +71,14 @@
 	<div id="menuTable">
 
 <!-- 	********************* Menu Table************ -->
-	<table style="width:100%">
-  <caption style="color:#96BD2D;text-align: center;">Panel Controller</caption>
+	<table style="width:100%" id="myTable">
+  <caption style="color:#4CAF50;text-align: center;">Panel Controller</caption>
   <tr>
-    <th style="color:#96BD2D;text-align: center;">Item Name</th>
-    <th style="color:#96BD2D;text-align: center;">Actions</th>
+    <th style="color:#4CAF50;text-align: center;">Item Name</th>
+    <th style="color:#4CAF50;text-align: center;">Actions</th>
   </tr>
   <button id="addingBut" type="button">Add</button>
+  <!-- <tr></tr> -->
 <!--   <tr>
     <td>January</td>
     <td>$100</td>
@@ -79,7 +87,7 @@
     <td>February</td>
     <td>$50</td>
   </tr> -->
-</table>
+</table >
 
 
 	<form id= "addingPopUp">
@@ -89,8 +97,48 @@
 	  <label ><b>price</b></label>
 	  <input id="priceInp" class="addingInp" type="number" placeholder="Enter item price" required>
 	  <br>
-	  <button id="submit"  type="submit">submit</button>
+	  <label ><b>Preparation time </b></label>
+	 	<input id="time" class="addingInp" type="number" placeholder="In Minutes" required>
+	 		<br>
+
+	  <label ><b>size</b></label>
+	  <select id="size" class="addingInp" >
+	  	<optgroup label="Meals">
+	  		<option>Small</option>
+		  	<option>Medium</option>
+		  	<option>Large</option>
+	  	</optgroup>
+	  		<optgroup label="Beverages">
+	  		<option>1 Liter</option>
+		  	<option>2 Liter</option>
+		  	<option>3 Liter</option>
+	  	</optgroup>
+	  		<optgroup label="Other">
+	  			<option>Not Applicable</option>
+	  		</optgroup>	
+	  		<br>
+
+	  	 
+	  		
+	  </select>
+	  <br>
+	  <button id="submit"  type="button" >submit</button>
+
 	</form>
+</div>
+
+	</section>
+
+	<section id ="myEarningsPage">
+
+		<div class="dropdown">
+  	<button onclick="searchDropdown()" class="dropbtn">Search</button>
+  	<div id="Dropdown" class="dropdown-content">
+    	<input type="text" placeholder="Search for item" id="searchBox" onkeyup="filterFunction()">
+	   <!--  <a href="#about">About</a> -->
+	
+  </div>
+</div>
 
 
 	</section>

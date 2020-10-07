@@ -21,7 +21,7 @@ text-align: center;
 
 form{
 text-align: center;
-color: #96BD2D;
+color: #4CAF50;
 /*display: flex;*/
 font-family: "Lucida Console", Courier, monospace;
 font: bold;
@@ -31,7 +31,7 @@ background-color: #F2F2F2;
 padding: 50px;
 margin-top:100px;
 margin-left:380px;
-box-shadow: 5px 10px 18px #96BD2D;
+box-shadow: 5px 10px 18px #4CAF50;
 position: absolute;
 left:90px;
 top:20px;
@@ -49,8 +49,8 @@ input {
 
 
 button {
-  width: 35%;
-  background-color: #96BD2D;
+  width: 45%;
+  background-color: #4CAF50;
   color: white;
   font-family: "Lucida Console", Courier, monospace;
 	font-size: x-large;
@@ -88,12 +88,13 @@ button:hover {
 }
 
 table, th, td {
-  border: 1px solid #96BD2D;
+  border: 1px solid #4CAF50;
   border-radius: 4px;
+
 }
 th, td {
-  padding-top: 25px;
-  padding-right: 200px;
+  padding-top: 1px;
+  padding-right: 50px;
   text-align: left;
 }
 
@@ -114,10 +115,52 @@ margin-top:-50px;
 }
 
 #addingPopUp{
+font-size: 15px;
 margin-left:10px;
 margin-top:-50px;
-padding-right: 200px;
+padding-right: 100px;
 position: absolute;
 left:1px;
 top:15px;
+}
+
+#addingInp{
+
+	width:20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#removeBut{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.actions{
+	width: 23%;
+	/*font-size: 3px;*/
+	text-align: center;
+	/*display: flex;*/
+	 background-color: #4CAF50;
+  border: none;
+  color: white;
+/*  padding: 15px 32px;*/
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
