@@ -16,10 +16,13 @@ var totalEarning=0
 
 // // console.log(counter)
 // //*******************************logain page**********88888888**********
-	// $("#myEarningsPage").hide()
-	// $("#panelPage").hide()
-	// $("#loginPge").show()
-	// $("#grid").hide()
+	$("#myEarningsPage").hide()
+	$("#panelPage").hide()
+	$("#loginPge").show()
+	$("#grid").hide()
+	$("#ViewMenuPage").hide()
+	$("#ViewMenuTable").hide()
+	
 
 	$("#myEarningsPage").hide()
 	
@@ -48,6 +51,11 @@ $("#tab2").click(function(){
 	$("#menuTable").show()
 	$("#Dropdown").hide()
 	$("#myEarningsPage").hide()
+	$("#ViewMenuPage").hide()
+	$("#ViewMenuTable").hide()
+	
+
+
 
 	})
 
@@ -56,6 +64,11 @@ $("#addingBut").click(function(){
 			$("#myTable").hide()
 			$("#addingBut").hide()
 			
+			$("#itemNameInp").val("")
+			$("#priceInp").val("")
+			$("#time").val("")
+			$("#size").val("")
+
 
 	})
 
@@ -82,6 +95,20 @@ $("#submit").click(function(){
       var typingItems= $("<span>"+value+"</span>") 
       $("#editable").append(typingItems)
     }) 
+
+		$.each(insertedItems, function(i,item){
+ 	var tableMenu = document.getElementById("ViewMenuTable");
+  var rowMenu = tableMenu.insertRow(i)
+  var cell1Menu = rowMenu.insertCell(0)
+  var cell2Menu = rowMenu.insertCell(1)
+  var cell3Menu = rowMenu.insertCell(2)
+  var cell4Menu = rowMenu.insertCell(3)
+   cell1Menu.innerHTML = item['name'];
+   cell2Menu.innerHTML = item['price'];
+   cell3Menu.innerHTML = item['time'];
+   cell4Menu.innerHTML = item['size'];
+   
+  })
 	
 	
 	insertRowFunc(counter)
@@ -257,6 +284,8 @@ $("#tab4").click(function(){
 			$("#menuTable").hide()
 			$("#myEarningsPage").show()
 			$("#addingOrders").hide()
+			$("#ViewMenuPage").hide()
+			$("#ViewMenuTable").hide()
 		
 	})
 
@@ -268,6 +297,8 @@ $("#OrderSubmit").click(function(){
 	orderCounter++
 	$("#addingOrders").hide()
 	$("#ordersTable").show()
+	$("#addOrderBut").show()
+	
 
 	 qty =$("#QtyInp").val()
 	var orderSize =$("#orderSize").val()
@@ -281,7 +312,18 @@ $("#OrderSubmit").click(function(){
 $("#addOrderBut").click(function(){
 $("#addingOrders").show()
 $("#ordersTable").hide()
+$("#addOrderBut").hide()
 
+
+			// $("#itemNameInp").val("")
+			// $("#priceInp").val("")
+			// $("#time").val("")
+			// $("#size").val("")
+
+	$("#searchBox").empty();
+  $("#editable").empty();
+  $("#QtyInp").val("");
+  $("#orderSize").val("")
 })
 
 
@@ -297,9 +339,45 @@ $("#ordersTable").hide()
   
 // })
 
+  $("#tab1").hover(function(){
+    $(this).css("width", "150%");
+    }, function(){
+    $(this).css("width", "100%");})
 
+    $("#tab2").hover(function(){
+    $(this).css("width", "150%");
+    }, function(){
+    $(this).css("width", "100%");})
 
+  	$("#tab3").hover(function(){
+    $(this).css("width", "150%");
+    }, function(){
+    $(this).css("width", "100%");})
+
+    $("#tab4").hover(function(){
+    $(this).css("width", "150%");
+    }, function(){
+    $(this).css("width", "100%");})
+ 
 //*****************************************************************************************************************
+
+
+
+//===================================View====================================================
+$("#tab3").click(function(){
+	
+	$("#Dropdown").hide()
+	$("#myEarningsPage").hide()
+	$("#menuTable").hide()
+	$("#addingOrders").hide()
+	$("#ViewMenuTable").show()
+	$("#ViewMenuPage").show()
+
+
+})
+
+
+
 
 })
 

@@ -12,21 +12,31 @@
 </head>
 <body>
 
+<style >
+	#addOrderBut{
+	width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  font-family: "Lucida Console", Courier, monospace;
+	font-size: x-large;
+  text-align: center;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+	}
+
+  </style>
 
 
 		<div id= "grid">
 
 		<div class="column">
-		 
-			<div class="row">
-			  <div id="tab1" class="column" style="background-color:#F2F2F2; border-radius: 5px; width: 350px ;height: 80px;">
-			    <h3 style="color:#4CAF50; text-align: center;">Restaurant Details</h3>
-			  
-			  </div>
-			</div>
+	
 			<div class="row">
 			  <div id="tab2" class="column" style="background-color:#F2F2F2; border-radius: 5px; width: 350px ;height: 80px;">
-			    <h3 style="color:#4CAF50 ; text-align: center;">Our Menu</h3>
+			    <h3 style="color:#4CAF50 ; text-align: center;">Control Panel</h3>
 
 			  </div>
 			</div>
@@ -55,9 +65,9 @@
 
 
 	<section id ="loginPge">
-	<h1 id = "header"> Yummy Restaurant </h1>
+	<h1 id = "header" style="color: #4CAF50; text-align: center;"> Yummy Restaurant </h1>
 
-<!-- 	<form id ="form">
+	<form id ="form">
 		<label ><b>Username</b></label>
 	  <input id="uName" type="text" placeholder="Enter Username" name="uname" required>
 		<br><br>
@@ -67,7 +77,7 @@
 	  <br><br>
 
 	  <button id="loginBut" type="button">Login</button>
-	</form> -->
+	</form>
 	</section>
 
 <!-- 	********************* control panel ************ -->
@@ -126,7 +136,7 @@
 
 <!-- *************************************My Earning Page**************************** -->
 	<section id ="myEarningsPage">
-<div id="EarningsTable">
+
 	<table style="width:100%" id="ordersTable">
 	  <caption style="color:#4CAF50;text-align: center;">Total Orders</caption>
 	  <tr>
@@ -136,12 +146,12 @@
 	    <th style="color:#4CAF50;text-align: center;">Date</th>
 	  </tr>
 	  
-	  <button id="addOrderBut"  class="button" type="button"  >Add</button>
+	  <button id="addOrderBut" type="button" >Add</button>
 
 	</table >
 
 
-	<form  id= "addingOrders" calss="form">
+	<form  id= "addingOrders" calss="form" style="background-color: #F2F2F2; border-radius: 5px;text-align: center; color: #4CAF50; padding: 25px; margin-top:-50px;margin-left:-100px;">
 
 		<div class="dropdown">
 	  	<button onclick="searchDropdown()" class="dropbtn">Search</button>
@@ -178,10 +188,27 @@
 	  <button id="OrderSubmit"  type="button" >Submit</button>
 
 	</form>
-</div>
+
 <div id="TotalEarningDiv">
 	<h1 >Total Earning:</h1><br>
 </div>
+
+	</section>
+
+<!-- --------------------------------View Menu Page------------------------ -->
+	<section id=" ViewMenuPage">
+
+	<table style="width:50%" id="ViewMenuTable">
+	  <caption style="color:white;text-align: center;">Our Menu</caption>
+	  <tr>
+	    <th style="color:#4CAF50;text-align: center;">Item</th>
+	    <th style="color:#4CAF50;text-align: center;">Price</th>
+	    <th style="color:#4CAF50;text-align: center;">Preparation time </th>
+	    <th style="color:#4CAF50;text-align: center;">Size</th>
+	  </tr>
+	  
+	  
+	</table >
 
 	</section>
 
