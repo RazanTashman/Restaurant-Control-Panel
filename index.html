@@ -54,10 +54,10 @@
 
 
 
-<!-- 	<section id ="loginPge">
+	<section id ="loginPge">
 	<h1 id = "header"> Yummy Restaurant </h1>
 
-	<form >
+<!-- 	<form id ="form">
 		<label ><b>Username</b></label>
 	  <input id="uName" type="text" placeholder="Enter Username" name="uname" required>
 		<br><br>
@@ -67,23 +67,23 @@
 	  <br><br>
 
 	  <button id="loginBut" type="button">Login</button>
-	</form>
-	</section> -->
+	</form> -->
+	</section>
 
 <!-- 	********************* control panel ************ -->
 <section id ="panelPage">
 	<div id="menuTable">
-		
+
 		<table style="width:100%" id="myTable">
-		  <caption style="color:#4CAF50;text-align: center;">Panel Controller</caption>
+		  <caption style="color:#4CAF50;text-align: center;">Control Panel</caption>
 		  <tr>
 		    <th style="color:#4CAF50;text-align: center;">Item Name</th>
 		    <th style="color:#4CAF50;text-align: center;">Actions</th>
 		  </tr>
-		  <button id="addingBut" type="button">Add</button>
+		  <button id="addingBut" class="button" type="button">Add</button>
 		</table >
 
-		
+
 		<form id= "addingPopUp" calss="form" >
 			<label ><b>Item Name</b></label>
 		  <input id="itemNameInp" class="addingInp" type="text" placeholder="Enter item name" required>
@@ -116,7 +116,7 @@
 		  		
 		  </select>
 		  <br>
-		  <button id="submit"  type="button" >submit</button>
+		  <button id="submit" class="button"  type="button" >submit</button>
 
 		</form>
 	</div>
@@ -126,7 +126,7 @@
 
 <!-- *************************************My Earning Page**************************** -->
 	<section id ="myEarningsPage">
-
+<div id="EarningsTable">
 	<table style="width:100%" id="ordersTable">
 	  <caption style="color:#4CAF50;text-align: center;">Total Orders</caption>
 	  <tr>
@@ -136,7 +136,7 @@
 	    <th style="color:#4CAF50;text-align: center;">Date</th>
 	  </tr>
 	  
-	  <button id="addOrderBut" type="button">Add</button>
+	  <button id="addOrderBut"  class="button" type="button"  >Add</button>
 
 	</table >
 
@@ -146,14 +146,14 @@
 		<div class="dropdown">
 	  	<button onclick="searchDropdown()" class="dropbtn">Search</button>
 	  	<div id="Dropdown" class="dropdown-content">
-	    	<input type="text" placeholder="Search for item" id="searchBox" onkeyup="filterFunction()">
+	    	<input type="text" class="OrdersInpClass" placeholder="Search for item" id="searchBox" onkeyup="filterFunction()">
 	 	 	</div>
 		</div>
 		
 		<div id = "editable" contenteditable="true"></div> 
 
 		<label ><b>Qty.</b></label>
-	  <input id="QtyInp" class="addingInp" type="number" placeholder="Enter the Qty" required>
+	  <input id="QtyInp" class="OrdersInpClass" class="addingInp" type="number" placeholder="Enter the Qty" required>
 		<br>
 
 	  <label ><b>size</b></label>
@@ -173,15 +173,15 @@
 	  		</optgroup>	
 	  		<br>
 	  </select>
-<!-- 	  <br>
-	  <button id="addOrdItem" type="button">Add</button> -->
+
 	  <br>
 	  <button id="OrderSubmit"  type="button" >Submit</button>
 
 	</form>
-
-	<h1 id="TotalEarning">Total Earning</h1>
-
+</div>
+<div id="TotalEarningDiv">
+	<h1 >Total Earning:</h1><br>
+</div>
 
 	</section>
 

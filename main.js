@@ -10,7 +10,7 @@ var qty
 var value
 var priceValue
 var subTotal
-var totalEarning
+var totalEarning=0
 
 
 
@@ -180,24 +180,34 @@ function insertRowFunc(initial){
 	removeBut.innerHTML = "Remove";
 	removeBut.setAttribute("onClick", "removeItemFunc()")
 	removeBut.setAttribute("id", "removeItem")
-	removeBut.setAttribute("class", "actions")
+	removeBut.setAttribute("class", "actionBut")
+	// removeBut.setAttribute("style", "padding: 1px 1px")
+	// // removeBut.setAttribute("style", "width: 8%")
+	// // removeBut.setAttribute("style", "font-size: 15px")
+	
+
+	
+	
 
 	// removeBut.ref=counter
 
 	var hideBut = document.createElement("button")
 	hideBut.innerHTML = "Hide";
 	hideBut.setAttribute("id", "hideItem")
-	hideBut.setAttribute("class", "actions")
+	hideBut.setAttribute("style", "padding: 1px 1px")
+	hideBut.setAttribute("class", "actionBut")
 
 	var showBut = document.createElement("button")
 	showBut.innerHTML = "Show";
 	showBut.setAttribute("id", "showItem")
-	showBut.setAttribute("class", "actions")
+	showBut.setAttribute("style", "padding: 1px 1px")
+	showBut.setAttribute("class", "actionBut")
 
 	var editBut = document.createElement("button")
 	editBut.innerHTML = "Edit";
 	editBut.setAttribute("id", "editItem")
-	editBut.setAttribute("class", "actions")
+	editBut.setAttribute("style", "padding: 1px 1px")
+	editBut.setAttribute("class", "actionBut")
 	// *********************************************************************
 
   cell2.insertAdjacentElement("beforeend", removeBut) 
@@ -227,7 +237,9 @@ function insertOrderRowFunc(initial){
   console.log("price:",priceValue)
   cell3.innerHTML = subTotal
   totalEarning += subTotal
+  $("#TotalEarningDiv").text(totalEarning)
   cell4.innerHTML = new Date().toLocaleDateString()
+
   
 }
 
@@ -255,30 +267,23 @@ $(".dropbtn").click(function(){
 $("#OrderSubmit").click(function(){
 	orderCounter++
 	$("#addingOrders").hide()
+	$("#ordersTable").show()
 
 	 qty =$("#QtyInp").val()
 	var orderSize =$("#orderSize").val()
-	
-	// itemDetails=makeItem(name,price,time,size)
-	// insertedItems.push(itemDetails)
-	
-	// var itemList = $("<a>"+itemDetails['name']+"</a>").appendTo("#Dropdown").on("click", function toggle(){
- //    var value= $(this).text()
- //    orderArray.push(value)
- //    // var joindArray=orderArray.join()
- //      console.log("value:" , value)
- //      $("#Dropdown").hide()
- //       // $("#searchBox").val("")
- //      var typingItems= $("<span>"+value+"</span>") 
- //      $("#editable").append(typingItems)
- //    }) 
+
 	
 	
 	insertOrderRowFunc(orderCounter)
 })
+
+
 $("#addOrderBut").click(function(){
 $("#addingOrders").show()
+$("#ordersTable").hide()
+
 })
+
 
 
 
